@@ -4,23 +4,23 @@
   
     
     <entry>
-      <title>用idea打包Springboot项目，并部署到Linux服务器</title>
+      <title>springboot 部署</title>
       <link href="/2019/03/28/springboot_jar/"/>
       <url>/2019/03/28/springboot_jar/</url>
       
-        <content type="html"><![CDATA[<h2 id="用idea打包Springboot项目，并部署到Linux服务器"><a href="#用idea打包Springboot项目，并部署到Linux服务器" class="headerlink" title="用idea打包Springboot项目，并部署到Linux服务器"></a>用idea打包Springboot项目，并部署到Linux服务器</h2><h3 id="一、idea配置"><a href="#一、idea配置" class="headerlink" title="一、idea配置"></a>一、idea配置</h3><ul><li><p>在 IDEA 上 File—&gt;Setting—&gt;Project Structure  </p><p>选择 Artifacts ，右上角加号添加—&gt;jar</p><p><img src="https://ws1.sinaimg.cn/large/ad76c30bly1g1icaimtltj21hc0t4wix.jpg" alt="avatar"></p><p><img src="https://ws1.sinaimg.cn/large/ad76c30bly1g1icailb3vj20sk0k5mxw.jpg" alt="avatar"></p><a id="more"></a></li></ul><h2 id="二、配置pom-xml"><a href="#二、配置pom-xml" class="headerlink" title="二、配置pom.xml"></a>二、配置pom.xml</h2><ul><li><p>项目<br><img src="https://ws1.sinaimg.cn/large/ad76c30bly1g1id5ke7vdj20lv0bn75g.jpg" alt=""></p></li><li><p>依赖打包插件</p>  <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure></li></ul><h2 id="三、在idea上打包项目"><a href="#三、在idea上打包项目" class="headerlink" title="三、在idea上打包项目"></a>三、在idea上打包项目</h2><ul><li><p>打开侧边栏的 Maven Project 双击 Package</p><p>  <img src="https://ws1.sinaimg.cn/large/ad76c30bly1g1id7mx3aoj20aa0dt3yn.jpg" alt=""></p></li><li><p>这时候控制台开始记录打包过程，如果打包成功，出现如下界面<br>  <img src="https://ws1.sinaimg.cn/large/ad76c30bly1g1id8lx3vrj20tj0bm0t6.jpg" alt=""></p></li><li><p>最终在 target 目录下生成 以工程名+版本号为名的 jar 文件就是我们想要的。<br>  <img src="https://ws1.sinaimg.cn/large/ad76c30bly1g1id9kbqv1j20a40dm74f.jpg" alt=""></p></li></ul><h2 id="四、测试启动jar运行项目"><a href="#四、测试启动jar运行项目" class="headerlink" title="四、测试启动jar运行项目"></a>四、测试启动jar运行项目</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar springboot_shiro-<span class="number">0.0</span>.1-SNAPSHOT.jar</span><br></pre></td></tr></table></figure><p><img src="https://ws1.sinaimg.cn/large/ad76c30bly1g1idbgi21zj20tj0bm0t6.jpg" alt=""></p><h2 id="五、在Linux上启动打包好的jar包"><a href="#五、在Linux上启动打包好的jar包" class="headerlink" title="五、在Linux上启动打包好的jar包"></a>五、在Linux上启动打包好的jar包</h2><p>spring boot项目打完jar包后（如aaa.jar），上传到linux服务器上(/data)</p><p>1、cd到/data目录</p><p>2、执行命令:</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup java -jar aaa.jar &amp;</span><br></pre></td></tr></table></figure><p>然后回车</p><p>也可以指定日志文件文件名随意（如：aaa.log）</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup java -jar aaa.jar &gt; aaa.log <span class="number">2</span>&gt;&amp;<span class="number">1</span> &amp;</span><br></pre></td></tr></table></figure><p>3、查看进程可以使用</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -ef|grep 'java -jar'</span><br></pre></td></tr></table></figure><p>4、运行后，在当前路径下会生成nohup.out文件，会记录服务器的日志。</p><p><br></p><hr><p><br></p><blockquote><p>参考：</p><p><a href="https://blog.csdn.net/qq_34409900/article/details/80561277" target="_blank" rel="noopener">https://blog.csdn.net/qq_34409900/article/details/80561277</a></p><p><a href="https://blog.csdn.net/qq_32423845/article/details/79851737" target="_blank" rel="noopener">https://blog.csdn.net/qq_32423845/article/details/79851737</a></p></blockquote>]]></content>
+        <content type="html"><![CDATA[<blockquote><p>SpringBoot部署到服务器，首先我们需要将项目打成jar包，然后上传到服务器上，在执行jar。</p></blockquote><a id="more"></a><h3 id="一、idea配置"><a href="#一、idea配置" class="headerlink" title="一、idea配置"></a>一、idea配置</h3><ul><li><p>在 IDEA 上 File—&gt;Setting—&gt;Project Structure  </p><p>选择 Artifacts ，右上角加号添加—&gt;jar</p><p><img src="https://ws1.sinaimg.cn/large/ad76c30bly1g1icaimtltj21hc0t4wix.jpg" alt="avatar"></p><p><img src="https://ws1.sinaimg.cn/large/ad76c30bly1g1icailb3vj20sk0k5mxw.jpg" alt="avatar"></p></li></ul><h2 id="二、配置pom-xml"><a href="#二、配置pom-xml" class="headerlink" title="二、配置pom.xml"></a>二、配置pom.xml</h2><ul><li><p>项目<br><img src="https://ws1.sinaimg.cn/large/ad76c30bly1g1id5ke7vdj20lv0bn75g.jpg" alt=""></p></li><li><p>依赖打包插件</p>  <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure></li></ul><h2 id="三、在idea上打包项目"><a href="#三、在idea上打包项目" class="headerlink" title="三、在idea上打包项目"></a>三、在idea上打包项目</h2><ul><li><p>打开侧边栏的 Maven Project 双击 Package</p><p>  <img src="https://ws1.sinaimg.cn/large/ad76c30bly1g1id7mx3aoj20aa0dt3yn.jpg" alt=""></p></li><li><p>这时候控制台开始记录打包过程，如果打包成功，出现如下界面<br>  <img src="https://ws1.sinaimg.cn/large/ad76c30bly1g1id8lx3vrj20tj0bm0t6.jpg" alt=""></p></li><li><p>最终在 target 目录下生成 以工程名+版本号为名的 jar 文件就是我们想要的。<br>  <img src="https://ws1.sinaimg.cn/large/ad76c30bly1g1id9kbqv1j20a40dm74f.jpg" alt=""></p></li></ul><h2 id="四、测试启动jar运行项目"><a href="#四、测试启动jar运行项目" class="headerlink" title="四、测试启动jar运行项目"></a>四、测试启动jar运行项目</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar springboot_shiro-<span class="number">0.0</span>.1-SNAPSHOT.jar</span><br></pre></td></tr></table></figure><p><img src="https://ws1.sinaimg.cn/large/ad76c30bly1g1idbgi21zj20tj0bm0t6.jpg" alt=""></p><h2 id="五、在Linux上启动打包好的jar包"><a href="#五、在Linux上启动打包好的jar包" class="headerlink" title="五、在Linux上启动打包好的jar包"></a>五、在Linux上启动打包好的jar包</h2><p>spring boot项目打完jar包后（如aaa.jar），上传到linux服务器上(/data)</p><p>1、cd到/data目录</p><p>2、执行命令:</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup java -jar aaa.jar &amp;</span><br></pre></td></tr></table></figure><p>然后回车</p><p>也可以指定日志文件文件名随意（如：aaa.log）</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup java -jar aaa.jar &gt; aaa.log <span class="number">2</span>&gt;&amp;<span class="number">1</span> &amp;</span><br></pre></td></tr></table></figure><p>3、查看进程可以使用</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -ef|grep 'java -jar'</span><br></pre></td></tr></table></figure><p>4、运行后，在当前路径下会生成nohup.out文件，会记录服务器的日志。</p><p><br></p><hr><p><br></p><blockquote><p>参考：</p><p><a href="https://blog.csdn.net/qq_34409900/article/details/80561277" target="_blank" rel="noopener">https://blog.csdn.net/qq_34409900/article/details/80561277</a></p><p><a href="https://blog.csdn.net/qq_32423845/article/details/79851737" target="_blank" rel="noopener">https://blog.csdn.net/qq_32423845/article/details/79851737</a></p></blockquote>]]></content>
       
       
       <categories>
           
-          <category> springboot </category>
+          <category> jar </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> java, springboot, jar </tag>
+            <tag> springboot </tag>
             
         </tags>
       
@@ -29,13 +29,25 @@
     
     
     <entry>
-      <title></title>
+      <title>Hello World</title>
       <link href="/2019/01/15/Hello%20World/"/>
       <url>/2019/01/15/Hello%20World/</url>
       
-        <content type="html"><![CDATA[<h3 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h3><p>hexo 博客搭建</p><ul><li><p>安装</p></li><li><p>配置</p></li><li><p>上传</p></li></ul>]]></content>
+        <content type="html"><![CDATA[<p>Hello World</p><ul><li><p>安装</p></li><li><p>配置</p></li><li><p>上传</p></li></ul>]]></content>
       
       
+      <categories>
+          
+          <category> test </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> test </tag>
+            
+        </tags>
       
     </entry>
     

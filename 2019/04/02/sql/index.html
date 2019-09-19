@@ -6,13 +6,15 @@
   <meta http-equiv="cache-control" content="no-cache">
   <meta http-equiv="expires" content="0">
   
-  <title>movieatravelove</title>
+  <title>Mysql 学习 | movieatravelove</title>
   <meta name="author" content="movieatravelove">
+  
+  <meta name="description" content="Mysql 学习">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
+  <meta property="og:title" content="Mysql 学习">
   <meta property="og:site_name" content="movieatravelove">
 
   
@@ -86,162 +88,33 @@
 
   <div class="container">
   	<div class="content">
-    	 <div class="page-header logo">
-  <h1>movieatravelove<span class="blink-fast">∎</span></h1>
-</div>
+    	 
 
-<div class="row page">
 
 	
+		<div class="page-header">
+			<h1> Mysql 学习</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
 	<div class="col-md-9">
 	
 
-		<div class="slogan">
+	<!-- content -->
+	<div class="mypage">		
+	  
+		 <div class="alert alert-success description">
+			<i class="fa fa-info-circle"></i> Mysql 学习
+		 </div> <!-- alert -->
+	  		
 
-</div>    
-
-		<div id="top_search"></div>
-		<div class="mypage">
-		
-		<!-- title and entry -->
-		
-			
-	
-	<!-- display as entry -->
-<div class="row">
-	<div class="col-md-8">
-		<h3 class="title">
-			<a href="/2019/04/10/spring线程安全问题/"></a>
-		</h3>
-		</div>
-	<div class="col-md-4">
-		<div class="date">post @ 2019-04-10  </div>
-		</div>
-	</div>
-	
-
-
-			<div class="entry">
-  <div class="row">
-	
-	
-		<h2 id="关于Spring的-Controller-Service等的线程安全问题"><a href="#关于Spring的-Controller-Service等的线程安全问题" class="headerlink" title="关于Spring的@Controller @Service等的线程安全问题"></a>关于Spring的@Controller @Service等的线程安全问题</h2><blockquote>
-</blockquote>
-<p><a href="https://blog.csdn.net/u012843361/article/details/84023869?tdsourcetag=s_pctim_aiomsg" target="_blank" rel="noopener">参考链接</a></p>
-
-	
-	</div>
-  <a type="button" href="/2019/04/10/spring线程安全问题/#more" class="btn btn-default more">Read More</a>
-</div>
-
-		
-			
-	
-	<!-- display as entry -->
-<div class="row">
-	<div class="col-md-8">
-		<h3 class="title">
-			<a href="/2019/04/04/使用shell部署jar包/" title="使用shell部署jar包">使用shell部署jar包</a>
-		</h3>
-		</div>
-	<div class="col-md-4">
-		<div class="date">post @ 2019-04-04  </div>
-		</div>
-	</div>
-	
-
-
-			<div class="entry">
-  <div class="row">
-	
-	
-		<blockquote>
-<p>SpringBoot部署到服务器，首先我们需要将项目打成jar包，然后上传到服务器上，使用shell部署jar包。</p>
-</blockquote>
-	
-	</div>
-  <a type="button" href="/2019/04/04/使用shell部署jar包/#more" class="btn btn-default more">Read More</a>
-</div>
-
-		
-			
-	
-	<!-- display as entry -->
-<div class="row">
-	<div class="col-md-8">
-		<h3 class="title">
-			<a href="/2019/04/03/springboot_vue/" title="SptingBoot + Vue 前后端分离开发总结">SpringBoot + vue</a>
-		</h3>
-		</div>
-	<div class="col-md-4">
-		<div class="date">post @ 2019-04-03  </div>
-		</div>
-	</div>
-	
-
-
-			<div class="entry">
-  <div class="row">
-	
-	
-		<p>SptingBoot + Vue 前后端分离开发总结</p>
-<h2 id="一、跨域问题"><a href="#一、跨域问题" class="headerlink" title="一、跨域问题"></a>一、跨域问题</h2><p>详情见上一篇文章 -&gt; <a href="http://blog.mozzie.xyz/2019/03/29/cros/" target="_blank" rel="noopener">SpringBoot使用CROS解决跨域问题</a></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CorsConfig</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">private</span> CorsConfiguration <span class="title">buildConfig</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		CorsConfiguration corsConfiguration = <span class="keyword">new</span> CorsConfiguration();</span><br><span class="line">		corsConfiguration.addAllowedOrigin(<span class="string">"*"</span>);</span><br><span class="line">		corsConfiguration.addAllowedHeader(<span class="string">"*"</span>);</span><br><span class="line">		corsConfiguration.addAllowedMethod(<span class="string">"*"</span>);</span><br><span class="line">		corsConfiguration.setAllowCredentials(<span class="keyword">true</span>);</span><br><span class="line">		<span class="keyword">return</span> corsConfiguration;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="meta">@Bean</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> FilterRegistrationBean <span class="title">corsFilter</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		UrlBasedCorsConfigurationSource source = <span class="keyword">new</span> UrlBasedCorsConfigurationSource();</span><br><span class="line">		source.registerCorsConfiguration(<span class="string">"/**"</span>, buildConfig());</span><br><span class="line">		FilterRegistrationBean bean = <span class="keyword">new</span> FilterRegistrationBean(<span class="keyword">new</span> CorsFilter(source));</span><br><span class="line">		bean.setOrder(Ordered.HIGHEST_PRECEDENCE);</span><br><span class="line">		<span class="keyword">return</span> bean;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="二、每次请求session-不一致问题"><a href="#二、每次请求session-不一致问题" class="headerlink" title="二、每次请求session 不一致问题"></a>二、每次请求session 不一致问题</h2><ul>
-<li><p>后端 Controller</p>
-<p>  登录接口返回sessionId</p>
-  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(value = <span class="string">"/"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">IndexController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Autowired</span></span><br><span class="line"><span class="keyword">private</span> HttpSession session;</span><br><span class="line"><span class="meta">@Autowired</span></span><br><span class="line"><span class="keyword">private</span> HttpServletRequest request;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 登录接口</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> user</span></span><br><span class="line"><span class="comment">* <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(value = <span class="string">"login"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">login</span><span class="params">(@RequestBody User user)</span> </span>&#123;</span><br><span class="line">	RespInfo respInfo = <span class="keyword">new</span> RespInfo();</span><br><span class="line">	<span class="keyword">if</span> (user.getUsername().equals(<span class="string">"admin"</span>)</span><br><span class="line">	&amp;&amp;user.getPassword().equals(<span class="string">"admin"</span>)) &#123;</span><br><span class="line">		respInfo.setCode(<span class="number">20</span>);</span><br><span class="line">		respInfo.setMsg(<span class="string">"登录成功"</span>);</span><br><span class="line">		respInfo.setData(session.getId());</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		respInfo.setCode(<span class="number">50</span>);</span><br><span class="line">		respInfo.setData(session.getId());</span><br><span class="line">		respInfo.setMsg(<span class="string">"账号或密码错误"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> JSON.toJSONString(respInfo);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 请求接口1</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> num</span></span><br><span class="line"><span class="comment">* <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(value = <span class="string">"index1"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">index1</span><span class="params">(String num)</span> </span>&#123;</span><br><span class="line">	RespInfo respInfo = <span class="keyword">new</span> RespInfo();</span><br><span class="line">	respInfo.setCode(<span class="number">20</span>);</span><br><span class="line">	Map&lt;String,String&gt; map = <span class="keyword">new</span> HashMap&lt;String, String&gt;();</span><br><span class="line">	map.put(<span class="string">"num"</span>,num);</span><br><span class="line">	map.put(<span class="string">"path"</span>,request.getRequestURI());</span><br><span class="line">	map.put(<span class="string">"sessionid"</span>,session.getId());</span><br><span class="line">	respInfo.setData(map);</span><br><span class="line">	System.out.println(JSON.toJSONString(map));</span><br><span class="line">	<span class="keyword">return</span> JSON.toJSONString(respInfo);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>前端 vue</p>
-<p>  修改前端axios请求，在axios的全局配置</p>
-<p>  这句话的意思是每次请求都带上cookie,这样每次取请求后端,就不会被认为是不同用户导致session丢失.哦了!</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">axios.defaults.withCredentials = true</span><br></pre></td></tr></table></figure>
-<p>  main.js</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &apos;vue&apos;</span><br><span class="line">import App from &apos;./App&apos;</span><br><span class="line">import router from &apos;./router&apos;</span><br><span class="line">import axios from  &apos;axios&apos;</span><br><span class="line">import iView from &apos;iview&apos;;</span><br><span class="line">import &apos;iview/dist/styles/iview.css&apos;;</span><br><span class="line"></span><br><span class="line">Vue.config.productionTip = false</span><br><span class="line">axios.defaults.withCredentials = true</span><br><span class="line"></span><br><span class="line">Vue.use(iView)</span><br><span class="line"></span><br><span class="line">/* eslint-disable no-new */</span><br><span class="line">new Vue(&#123;</span><br><span class="line">el: &apos;#app&apos;,</span><br><span class="line">router,</span><br><span class="line">components: &#123; App &#125;,</span><br><span class="line">template: &apos;&lt;App/&gt;&apos;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="三、axios-获取error的状态值"><a href="#三、axios-获取error的状态值" class="headerlink" title="三、axios 获取error的状态值"></a>三、axios 获取error的状态值</h2><p>当axios获取请求错误的时候,我们找不到error里面的具体信息</p>
-<p><img src="https://ws1.sinaimg.cn/large/ad76c30bly1g1qde6gffrj20xj0dsmz7.jpg" alt=""></p>
-<p>得不到里面的status和具体的信息</p>
-<p>解决方法: 我们只需要在error后面添加error.response</p>
-<p>然后就可以发现,具体的信息全部都出来了</p>
-<hr>
-<p><br></p>
-<blockquote>
-<p>参考：</p>
-<p><a href="https://blog.csdn.net/qq_38082304/article/details/79914994" target="_blank" rel="noopener">https://blog.csdn.net/qq_38082304/article/details/79914994</a></p>
-<p><a href="https://github.com/niezhiliang/multy-domain-user-identifying" target="_blank" rel="noopener">https://github.com/niezhiliang/multy-domain-user-identifying</a></p>
-<p><a href="https://blog.csdn.net/weixin_41838204/article/details/82107567" target="_blank" rel="noopener">https://blog.csdn.net/weixin_41838204/article/details/82107567</a></p>
-<p><a href="https://blog.csdn.net/qq_35493664/article/details/83502472" target="_blank" rel="noopener">https://blog.csdn.net/qq_35493664/article/details/83502472</a></p>
-</blockquote>
-
-	
-	</div>
-  <a type="button" href="/2019/04/03/springboot_vue/#more" class="btn btn-default more">Read More</a>
-</div>
-
-		
-			
-	
-	<!-- display as entry -->
-<div class="row">
-	<div class="col-md-8">
-		<h3 class="title">
-			<a href="/2019/04/02/sql/" title="Mysql 学习">Mysql 学习</a>
-		</h3>
-		</div>
-	<div class="col-md-4">
-		<div class="date">post @ 2019-04-02  </div>
-		</div>
-	</div>
-	
-
-
-			<div class="entry">
-  <div class="row">
-	
-	
-		<a id="more"></a>
+	  <a id="more"></a>
 <h3 id="查询最近"><a href="#查询最近" class="headerlink" title="查询最近"></a>查询最近</h3><ul>
 <li><p>查询近30天的所有日期</p>
   <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">NOW</span>() - <span class="built_in">INTERVAL</span> (@i:=@i+<span class="number">1</span>) <span class="keyword">DAY</span> <span class="keyword">as</span> <span class="built_in">date</span></span><br><span class="line"><span class="keyword">FROM</span> information_schema. <span class="keyword">TABLES</span>, (<span class="keyword">SELECT</span> @i:=<span class="number">-1</span>) X</span><br><span class="line"><span class="keyword">WHERE</span> @i &lt; <span class="number">29</span> <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="built_in">date</span></span><br></pre></td></tr></table></figure>
@@ -278,268 +151,99 @@
 <p><a href="https://www.cnblogs.com/kenshinobiy/p/4920723.html" target="_blank" rel="noopener">https://www.cnblogs.com/kenshinobiy/p/4920723.html</a></p>
 <p><a href="https://blog.csdn.net/Axela30W/article/details/76507021" target="_blank" rel="noopener">https://blog.csdn.net/Axela30W/article/details/76507021</a></p>
 </blockquote>
-
-	
-	</div>
-  <a type="button" href="/2019/04/02/sql/#more" class="btn btn-default more">Read More</a>
-</div>
-
-		
-			
-	
-	<!-- display as entry -->
-<div class="row">
-	<div class="col-md-8">
-		<h3 class="title">
-			<a href="/2019/03/29/cros/" title="SpringBoot使用CROS解决跨域问题">SpringBoot使用CROS解决跨域问题</a>
-		</h3>
-		</div>
-	<div class="col-md-4">
-		<div class="date">post @ 2019-03-29  </div>
-		</div>
-	</div>
-	
-
-
-			<div class="entry">
-  <div class="row">
-	
-	
-		<h2 id="一、跨域"><a href="#一、跨域" class="headerlink" title="一、跨域"></a>一、跨域</h2><p>对于前后端分离的项目来说，如果前端项目与后端项目部署在两个不同的域下，那么势必会引起跨域问题的出现。</p>
-<p>针对跨域问题，我们可能第一个想到的解决方案就是jsonp，并且以前处理跨域问题我基本也是这么处理。</p>
-<p>但是jsonp方式也同样有不足，不管是对于前端还是后端来说，写法与我们平常的ajax写法不同，同样后端也需要作出相应的更改。并且，jsonp方式只能通过get请求方式来传递参数，当然也还有其它的不足之处，针对于此，我并没有急着使用jsonp的方式来解决跨域问题，去网上找寻其它方式，也就是本文主要所要讲的，在springboot中通过cors协议解决跨域问题。</p>
-	
-	</div>
-  <a type="button" href="/2019/03/29/cros/#more" class="btn btn-default more">Read More</a>
-</div>
-
-		
-			
-	
-	<!-- display as entry -->
-<div class="row">
-	<div class="col-md-8">
-		<h3 class="title">
-			<a href="/2019/03/29/ip/" title="Ubuntu使用命令行查看本机IP">Ubuntu查看本机IP</a>
-		</h3>
-		</div>
-	<div class="col-md-4">
-		<div class="date">post @ 2019-03-29  </div>
-		</div>
-	</div>
-	
-
-
-			<div class="entry">
-  <div class="row">
-	
-	
-		<a id="more"></a>
-<ol>
-<li><p>下载net-tools</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install net-tools</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>输入命令</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig</span><br></pre></td></tr></table></figure>
-<p> <img src="https://ws1.sinaimg.cn/large/ad76c30bly1g1jfsynrdaj20jz04r753.jpg" alt=""></p>
-<p> 其中inet之后的就是ip地址</p>
-<p> inet6之后的就是ipv6地址</p>
-</li>
-</ol>
-<hr>
-<p><br></p>
-<blockquote>
-<p>参考：</p>
-<p><a href="https://blog.csdn.net/zhangvalue/article/details/80270169" target="_blank" rel="noopener">https://blog.csdn.net/zhangvalue/article/details/80270169</a></p>
-</blockquote>
-
-	
-	</div>
-  <a type="button" href="/2019/03/29/ip/#more" class="btn btn-default more">Read More</a>
-</div>
-
-		
-			
-	
-	<!-- display as entry -->
-<div class="row">
-	<div class="col-md-8">
-		<h3 class="title">
-			<a href="/2019/03/28/jar/" title="用idea打包Springboot项目，并部署到Linux服务器">springboot 部署</a>
-		</h3>
-		</div>
-	<div class="col-md-4">
-		<div class="date">post @ 2019-03-28  </div>
-		</div>
-	</div>
-	
-
-
-			<div class="entry">
-  <div class="row">
-	
-	
-		<blockquote>
-<p>SpringBoot部署到服务器，首先我们需要将项目打成jar包，然后上传到服务器上，在执行jar。</p>
-</blockquote>
-	
-	</div>
-  <a type="button" href="/2019/03/28/jar/#more" class="btn btn-default more">Read More</a>
-</div>
-
-		
-			
-	
-	<!-- display as entry -->
-<div class="row">
-	<div class="col-md-8">
-		<h3 class="title">
-			<a href="/2019/01/15/Hello World/" title="hexo 博客搭建">Hello World</a>
-		</h3>
-		</div>
-	<div class="col-md-4">
-		<div class="date">post @ 2019-01-15  </div>
-		</div>
-	</div>
-	
-
-
-			<div class="entry">
-  <div class="row">
-	
-	
-		<p>Hello World</p>
-	
-	</div>
-  <a type="button" href="/2019/01/15/Hello World/#more" class="btn btn-default more">Read More</a>
-</div>
-
-		
-
-		</div>
-
-		<!-- pagination -->
-		<div>
-  		<center>
-		<div class="pagination">
-
-   
-</div>
-
-  		</center>
-		</div>
-
-		
-		
-	</div> <!-- col-md-9 -->
-
-	
-		<div class="col-md-3">
-	<div id="sidebar">
-	
-			
-  <div id="site_search">
-   <div class="form-group">
-    <input type="text" id="local-search-input" name="q" results="0" placeholder="Search" class="st-search-input st-default-search-input form-control">
-   </div>  
-  <div id="local-search-result"></div>
-  </div>
-
-
-		
-			
-	<div class="widget">
-		<h4>Categories</h4>
-		<ul class="tag_box inline list-unstyled">
-		
-			<li><a href="/categories/CROS-跨域/">CROS, 跨域<span>1</span></a></li>
-		
-			<li><a href="/categories/SpringBoot-vue/">SpringBoot vue<span>1</span></a></li>
-		
-			<li><a href="/categories/Ubuntu/">Ubuntu<span>1</span></a></li>
-		
-			<li><a href="/categories/jar/">jar<span>2</span></a></li>
-		
-			<li><a href="/categories/mysql/">mysql<span>1</span></a></li>
-		
-			<li><a href="/categories/test/">test<span>1</span></a></li>
-		
-		</ul>
+	  
 	</div>
 
-		
-			
-	<div class="widget">
-		<h4>Tag Cloud</h4>
-		<ul class="tag_box inline list-unstyled">		
-		
-			<li><a href="/tags/mysql/">mysql<span>1</span></a></li>
-		
-			<li><a href="/tags/Ubuntu/">Ubuntu<span>1</span></a></li>
-		
-			<li><a href="/tags/springboot/">springboot<span>4</span></a></li>
-		
-			<li><a href="/tags/test/">test<span>1</span></a></li>
-		
-		 
-		</ul>
-	</div>
+	<div>
+  	<center>
+	<div class="pagination">
 
-
-		
-			
-<div class="widget">
-  <h4>Recent Posts</h4>
-  <ul class="entry list-unstyled">
     
-      <li>
-        <a href="/2019/04/10/spring线程安全问题/"><i class="fa fa-file-o"></i></a>
-      </li>
     
-      <li>
-        <a href="/2019/04/04/使用shell部署jar包/" title="使用shell部署jar包"><i class="fa fa-file-o"></i>使用shell部署jar包</a>
-      </li>
+    <a href="/2019/04/03/springboot_vue/" type="button" class="btn btn-default"><i class="fa fa-arrow-circle-o-left"></i> Prev</a>
     
-      <li>
-        <a href="/2019/04/03/springboot_vue/" title="SptingBoot + Vue 前后端分离开发总结"><i class="fa fa-file-o"></i>SpringBoot + vue</a>
-      </li>
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
     
-      <li>
-        <a href="/2019/04/02/sql/" title="Mysql 学习"><i class="fa fa-file-o"></i>Mysql 学习</a>
-      </li>
+    <a href="/2019/03/29/cros/" type="button" class="btn btn-default ">Next<i class="fa fa-arrow-circle-o-right"></i></a>
     
-      <li>
-        <a href="/2019/03/29/cros/" title="SpringBoot使用CROS解决跨域问题"><i class="fa fa-file-o"></i>SpringBoot使用CROS解决跨域问题</a>
-      </li>
+
     
-  </ul>
 </div>
 
+    </center>
+	</div>
+	
+	<!-- comment -->
+	
+<section id="comment">
+    <h2 class="title">Comments</h2>
+
+    
+</section>
+
+
+	</div> <!-- col-md-9/col-md-12 -->
 		
-			
-<div class="widget">
-	<h4>Links</h4>
-	<ul class="blogroll list-unstyled">
 	
-		<li><i class="fa fa-github"></i><a href="https://github.com/wzpan/hexo-theme-freemind" title="Freemind's Github repository." target="_blank" ]);"="">Freemind</a></li>
-	
-		<li><i class="fa fa-github"></i><a href="https://github.com/kristopolous/BOOTSTRA.386" title="BOOTSTRA.386's Github repository." target="_blank" ]);"="">BOOTSTRA.386</a></li>
-	
-		<li><i class="fa fa-github"></i><a href="https://github.com/blackshow/hexo-theme-freemind.386" title="Freemind.386's Github repository." target="_blank" ]);"="">Freemind.386</a></li>
-	
-		<li><i class="fa fa-github"></i><a href="http://www.github.com/movieatravelove" title="My Github account." target="_blank" ]);"="">My Github</a></li>
-	
-	</ul>
-</div>
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
 
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2019-04-02 
+	</div>
+	
 
+	<!-- categories -->
+    
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    </li><li><a href="/categories/mysql/">mysql<span>1</span></a></li>
+  
+
+    </ul>
+	</div>
+	
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
+    <ul id="tags" class="tag_box list-unstyled collapse in">	  
+	    
+  <li><a href="/tags/mysql/">mysql<span>1</span></a></li>
+    </ul>
+	</div>
 		
-	</div> <!-- sidebar -->
-</div> <!-- col-md-3 -->
 
+	<!-- toc -->
+	<div class="meta-widget">
 	
+	   <a data-toggle="collapse" data-target="#toc"><i class="fa fa-bars"></i></a>
+	   <div id="toc" class="toc collapse in">
+		   <span class="toc-title">Contents</span>
+			<ol class="toc-article"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#查询最近"><span class="toc-article-text">查询最近</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#存储过程"><span class="toc-article-text">存储过程</span></a></li></ol>
+		</div>
 	
-</div> <!-- row-fluid -->
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+	</div>
+		
+
+</div><!-- row -->
+
+
+
 	</div>
   </div>
   <div class="container-narrow">

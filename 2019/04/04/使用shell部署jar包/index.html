@@ -1,0 +1,288 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>使用shell部署jar包 | movieatravelove</title>
+  <meta name="author" content="movieatravelove">
+  
+  <meta name="description" content="使用shell部署jar包">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="使用shell部署jar包">
+  <meta property="og:site_name" content="movieatravelove">
+
+  
+    <meta property="og:image" content="">
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+
+
+</head>
+</html>
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">movieatravelove</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class=""></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class=""></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class=""></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class=""></i>About
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header">
+			<h1> 使用shell部署jar包</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  
+		 <div class="alert alert-success description">
+			<i class="fa fa-info-circle"></i> 使用shell部署jar包
+		 </div> <!-- alert -->
+	  		
+
+	  <blockquote>
+<p>SpringBoot部署到服务器，首先我们需要将项目打成jar包，然后上传到服务器上，使用shell部署jar包。</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="一、使用shell部署jar"><a href="#一、使用shell部署jar" class="headerlink" title="一、使用shell部署jar"></a>一、使用shell部署jar</h3><ol>
+<li><p>复制本shell为deploy.sh(文末), 然后将jar包和本shell放在同一目录</p>
+</li>
+<li><p>执行chmod u+x deploy.sh</p>
+</li>
+<li><p>执行./deploy.sh aaa.jar pro log</p>
+<blockquote>
+<p>参数1，jar包完整名称（带.jar）</p>
+<p>参数2，运行环境如prd</p>
+<p>参数3，日志目录（输入的目录不存在会自动创建）</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="二、停止运行"><a href="#二、停止运行" class="headerlink" title="二、停止运行"></a>二、停止运行</h3><ol>
+<li><p>使用命令行找出正在运行的jar 的进程id</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -ef | grep aaa.jar</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>杀进程</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kill -9 进程id</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="三、注意事项"><a href="#三、注意事项" class="headerlink" title="三、注意事项"></a>三、注意事项</h3><ol>
+<li><p>先执行whereis bash，目录如果不是/usrbin/bash，就替换shell第一行的bash地址声明</p>
+</li>
+<li><p>如果无权限，使用 vim deploy.sh 进入deploy.sh后， 在底部模式下(shift + :)， 执行 :set fileformat=unix 后执行 :x 或者 :wq 保存修改。 然后就可以执行 ./a.sh 运行脚本</p>
+</li>
+</ol>
+<h3 id="四、shell文件"><a href="#四、shell文件" class="headerlink" title="四、shell文件"></a>四、shell文件</h3><p>deploy.sh</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>! /bin/bash</span><br><span class="line"></span><br><span class="line">JAR_FILE=$1</span><br><span class="line">PACKAGE_PATH=/home/package</span><br><span class="line">PROJECT_PROFILE=prd</span><br><span class="line">LOG_PATH=$3</span><br><span class="line"></span><br><span class="line">export JAVA_HOME=$JAVA_HOME</span><br><span class="line"></span><br><span class="line">echo -e "\n\033[46;30m ========== 欢迎使用本脚本部署应用 version 1.0 created by Jerry.Song ========= \033[0m\n"</span><br><span class="line"></span><br><span class="line">if [[ -f $JAR_FILE ]]; then</span><br><span class="line">    echo "已经找到文件 $JAR_FILE,任务即将开始..."</span><br><span class="line">    TEMP_PATH=`pwd`</span><br><span class="line">    echo -e "当前所在文件夹: \033[1;34m $TEMP_PATH \033[0m"</span><br><span class="line">else</span><br><span class="line">    echo "当前目录下没有jar文件,请检查!"</span><br><span class="line">    exit 1</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">if [[ -z $TEMP_PATH ]]; then</span><br><span class="line">    echo "当前目录读取错误,程序即将停止运行"</span><br><span class="line">    exit 1</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">PID=$(ps -ef | grep -w $&#123;JAR_FILE&#125; | grep -w java | grep -v grep | awk '&#123;print $2&#125;')</span><br><span class="line"></span><br><span class="line">if [[ -z $&#123;PID&#125; ]]; then</span><br><span class="line">    echo "没有旧的jar文件在运行,等待部署流程启动...";</span><br><span class="line">else</span><br><span class="line">    echo -e "开始杀死旧jar文件进程,进程id为：\033[1;34m $PID \033[0m";</span><br><span class="line">    kill -9 $&#123;PID&#125;;</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">if [[ ! -d $PACKAGE_PATH ]]; then</span><br><span class="line">    mkdir -p $PACKAGE_PATH</span><br><span class="line">    cd $PACKAGE_PATH</span><br><span class="line">else</span><br><span class="line">    cd $PACKAGE_PATH</span><br><span class="line">    if [[ -f $JAR_FILE ]];then</span><br><span class="line">        mv $&#123;JAR_FILE&#125; "$&#123;JAR_FILE/.*/&#125;_`date +%Y%m%d%H%M%S`.jar"</span><br><span class="line">    fi</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">cp $TEMP_PATH/$JAR_FILE ./$JAR_FILE</span><br><span class="line">if [[ ! -z $2 ]]; then</span><br><span class="line">        PROJECT_PROFILE=$2</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">if [[ -z $LOG_PATH ]]; then</span><br><span class="line">    LOG_PATH=~/logs</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">echo -e "当前日志目录指向 ====&gt;  \033[1;34m $LOG_PATH \033[0m"</span><br><span class="line"></span><br><span class="line">if [[ ! -d $LOG_PATH ]]; then</span><br><span class="line">        mkdir -p $LOG_PATH</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">echo -e "\n请稍等片刻,程序即将被部署,当前运行环境配置为: \033[1;34m $PROJECT_PROFILE \033[0m"</span><br><span class="line"></span><br><span class="line">nohup java -server -Xms128M -Xmx512M -jar $JAR_FILE --spring.profiles.active=$PROJECT_PROFILE &gt;&gt; $LOG_PATH/$&#123;JAR_FILE%.*&#125;.log 2&gt;&amp;1 &amp;</span><br><span class="line"></span><br><span class="line">if [[ $? = 0 ]]; then</span><br><span class="line">    echo -e "\n\033[5;31m ===================== 成功运行项目,请等待5秒加载系统日志 ==================== \033[0m\n"</span><br><span class="line">    sleep 5</span><br><span class="line">    tail -f $&#123;LOG_PATH&#125;/$&#123;JAR_FILE%.*&#125;.log</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+<hr>
+<p><br></p>
+<blockquote>
+<p>参考：</p>
+<p><a href="https://blog.csdn.net/qq_34409900/article/details/80561277" target="_blank" rel="noopener">https://blog.csdn.net/qq_34409900/article/details/80561277</a></p>
+<p><a href="https://blog.csdn.net/qq_32423845/article/details/79851737" target="_blank" rel="noopener">https://blog.csdn.net/qq_32423845/article/details/79851737</a></p>
+</blockquote>
+	  
+	</div>
+
+	<div>
+  	<center>
+	<div class="pagination">
+
+    
+    
+    <a href="/2019/04/10/spring线程安全问题/" type="button" class="btn btn-default"><i class="fa fa-arrow-circle-o-left"></i> Prev</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/2019/04/03/springboot_vue/" type="button" class="btn btn-default ">Next<i class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+    </center>
+	</div>
+	
+	<!-- comment -->
+	
+<section id="comment">
+    <h2 class="title">Comments</h2>
+
+    
+</section>
+
+
+	</div> <!-- col-md-9/col-md-12 -->
+		
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2019-04-04 
+	</div>
+	
+
+	<!-- categories -->
+    
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    </li><li><a href="/categories/jar/">jar<span>2</span></a></li>
+  
+
+    </ul>
+	</div>
+	
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
+    <ul id="tags" class="tag_box list-unstyled collapse in">	  
+	    
+  <li><a href="/tags/springboot/">springboot<span>4</span></a></li>
+    </ul>
+	</div>
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	   <a data-toggle="collapse" data-target="#toc"><i class="fa fa-bars"></i></a>
+	   <div id="toc" class="toc collapse in">
+		   <span class="toc-title">Contents</span>
+			<ol class="toc-article"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#一、使用shell部署jar"><span class="toc-article-text">一、使用shell部署jar</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#二、停止运行"><span class="toc-article-text">二、停止运行</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#三、注意事项"><span class="toc-article-text">三、注意事项</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#四、shell文件"><span class="toc-article-text">四、shell文件</span></a></li></ol>
+		</div>
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+	</div>
+		
+
+</div><!-- row -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  &copy; 2019 movieatravelove
+  
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a>,<a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>,<a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a> and <a href="http://getbootstrap.com/" target="_blank">BOOTSTRA.386</a>. 
+     <br> Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind.386</a>.    
+</p>
+ </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">   
+  <span>⬆︎TOP</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>
